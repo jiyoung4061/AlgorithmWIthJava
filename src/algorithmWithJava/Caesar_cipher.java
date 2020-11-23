@@ -4,18 +4,28 @@ public class Caesar_cipher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			String s = "z";
-			int n = 1;
+			String s = "a B z";
+			int n = 4;
+			String answer="";
 			
 			char[] arr = s.toCharArray();
-			
-			for(int i = 0 ; i < arr.length ; i++) {
-				if( arr[i] != ' ' && arr[i] != 'z') {					
-					arr[i] += n;
-				} else if(arr[i] == 'z') {
-					arr[i] = (char) ('a'+(n-1));
-				}
-			}
 			System.out.println(arr);
+			for(int i = 0 ; i < arr.length ; i++) {
+				if(arr[i] <= 'z' && arr[i] >= 'a') {
+					arr[i]+= n;
+					if(arr[i] > 'z') {
+						arr[i] -= 'z'-'a'+1;
+					}
+
+				} else if(arr[i] <= 'Z' && arr[i] >= 'A'){
+					arr[i]+= n;
+					if(arr[i] > 'Z') {
+						arr[i] -= 'Z'-'A'+1;
+					}
+				}
+				answer += arr[i];
+				
+			}
+			System.out.println(answer);
 	}
 }
