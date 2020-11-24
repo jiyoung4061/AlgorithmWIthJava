@@ -21,5 +21,4 @@ public class MakeStrangeString {
 		answer = answer.substring(answer.length()-2, answer.length()-1);
 		System.out.println(answer);
 	}
-
 }
